@@ -8,7 +8,7 @@ class Race(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    bonus = models.CharField(max_length=255)
+    bonus = models.FloatField(default=0)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
 
 
@@ -23,4 +23,4 @@ class Player(models.Model):
     bio = models.CharField(max_length=255)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     guild = models.ForeignKey(Guild, null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)

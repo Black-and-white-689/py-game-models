@@ -38,7 +38,6 @@ def main() -> None:
                     "bio": player.get("bio", ""),
                     "race": race,
                     "guild": guild,
-                    "created_at": now()
                 }
             )
 
